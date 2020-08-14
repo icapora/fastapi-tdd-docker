@@ -1,0 +1,12 @@
+asyncpg
+black
+fastapi~=0.61.0
+flake8
+gunicorn
+isort
+pydantic~=1.6.1
+pytest
+pytest-cov
+requests
+tortoise-orm
+uvicorn

@@ -1,0 +1,7 @@
+__pycache__
+env
+venv/
+.idea/
+.coverage
+.coverager
+commands.sh
