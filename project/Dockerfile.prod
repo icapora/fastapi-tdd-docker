@@ -19,7 +19,6 @@ ENV PYTHONUNBUFFERED 1
 RUN pip install --upgrade pip
 COPY ./requirements.txt .
 RUN pip wheel --no-cache-dir --no-deps --wheel-dir /usr/src/app/wheels -r requirements.txt
-RUN spacy download en_core_web_md && spacy download es_core_news_md
 
 # lint
 COPY . /usr/src/app/
@@ -61,6 +60,7 @@ COPY --from=builder /usr/src/app/wheels /wheels
 COPY --from=builder /usr/src/app/requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install --no-cache /wheels/*
+RUN spacy download en_core_web_md && spacy download es_core_news_md
 
 # add app
 COPY . .
