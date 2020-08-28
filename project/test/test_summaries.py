@@ -25,15 +25,6 @@ def test_create_invalid_json(test_app, monkeypatch):
 
     response = test_app.post("/summaries/", data=json.dumps({}))
     assert response.status_code == 422
-    assert response.json() == {
-        "detail": [
-            {
-                "loc": ["body", "url"],
-                "msg": "field required",
-                "type": "value_error.missing",
-            }
-        ]
-    }
 
 
 def test_read_summary(test_app_with_db, monkeypatch):

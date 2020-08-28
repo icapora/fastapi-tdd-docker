@@ -1,7 +1,7 @@
 from typing import Dict, List, Optional
 
-from app.models.pydantic import SummaryPayloadSchema, SummaryUpdatePayloadSchema
-from app.models.tortoise import TextSummary
+from app.schemas.summary import SummaryPayloadSchema, SummaryUpdatePayloadSchema
+from app.models.summary import TextSummary
 
 
 async def post(payload: SummaryPayloadSchema) -> int:

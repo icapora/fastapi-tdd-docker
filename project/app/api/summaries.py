@@ -2,14 +2,14 @@ from typing import List
 
 from fastapi import APIRouter, HTTPException, BackgroundTasks
 
-from app.api import crud
-from app.models.pydantic import (
+from app.crud import crud
+from app.schemas.summary import (
     SummaryPayloadSchema,
     SummaryResponseSchema,
     SummaryUpdatePayloadSchema,
 )
-from app.models.tortoise import SummarySchema
-from app.summarizer import generate_summary
+from app.models.summary import SummarySchema
+from app.services.summarizer import generate_summary
 
 router = APIRouter()
 
